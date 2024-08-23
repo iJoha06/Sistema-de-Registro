@@ -1,0 +1,74 @@
+<div class="container-fluid">
+    <!-- Encabezado de la página -->
+    <div class="row mt-4">
+        <div class="col-md-12">
+            <h1 class="text-center text-primary">Gestión de Estudiantes</h1>
+            <p class="text-center text-muted">
+                Bienvenido al módulo de gestión de estudiantes. Aquí puedes agregar nuevos estudiantes, actualizar información existente y ver una lista completa de todos los estudiantes registrados en el sistema.
+            </p>
+            <hr class="my-4">           
+        </div>
+    </div>
+
+    <div class="row justify-content-center">
+        <div class="col-md-4 mt-5">
+            <div class="card border-0 shadow p-3">
+                <div class="form-floating mb-3 text-center">
+                    <h5 class="text-center text-danger">{{ studentObj.id ? 'Actualizar Estudiante' : 'Agregar Estudiante' }}</h5>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="firstName" name="firstName" [(ngModel)]="first_name">
+                    <label for="firstName">Nombre</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="lastName" name="lastName" [(ngModel)]="last_name">
+                    <label for="lastName">Apellido</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="email" class="form-control" id="email" name="email" [(ngModel)]="email">
+                    <label for="email">Correo Electrónico</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="tel" class="form-control" id="mobile" name="mobile" [(ngModel)]="mobile" required>
+                    <label for="mobile">Celular</label>
+                </div>
+                <button type="button" class="btn btn-outline-success" (click)="addStudent()">Agregar Estudiante</button><br>
+                <button type="button" class="btn btn-outline-primary" (click)="updateStudent()" *ngIf="studentObj.id">Actualizar Estudiante</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-5 justify-content-center">
+        <div class="col-md-10">
+            <h5 class="text-danger text-center">Lista de Estudiantes</h5>
+            <div class="card p-3 shadow">
+                <div class="card-body">
+                    <table class="table table-hover text-center">
+                        <thead>
+                          <tr>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Apellido</th>
+                            <th scope="col">Correo</th>
+                            <th scope="col">Celular</th>
+                            <th scope="col">Acción</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr *ngFor="let Student of studentsList">
+                            <td>{{Student.first_name}}</td>
+                            <td>{{Student.last_name}}</td>
+                            <td>{{Student.email}}</td>
+                            <td>{{Student.mobile}}</td>
+                            <td>
+                                <button class="btn btn-outline-success" (click)="editStudent(Student)">Editar</button>
+                                <button class="btn btn-outline-danger" (click)="deleteStudent(Student)">Eliminar</button>             
+                            </td>                        
+                          </tr>
+                        </tbody>
+                      </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<br><br><br><br><br><br><br><br>

@@ -1,0 +1,76 @@
+body {
+    background-color: #f8f9fa; /* Fondo claro */
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Asegura que ocupe toda la altura de la pantalla */
+    margin: 0;
+}
+
+.container-fluid {
+    height: 100vh;
+}
+
+.card {
+    border-radius: 10px; /* Esquinas redondeadas */
+    border: none;
+    max-width: 500px; /* Limitar el ancho máximo de la tarjeta */
+    width: 100%;
+}
+
+.card-body {
+    padding: 30px;
+}
+
+h4 {
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-label {
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.form-control {
+    border-radius: 5px; /* Esquinas redondeadas en los campos de formulario */
+    border: 1px solid #ced4da;
+}
+
+.btn-info {
+    width: 100%;
+    border-radius: 5px;
+    background-color: #28a745;
+    border-color: #28a745;
+    color: white;
+    font-weight: bold;
+    padding: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-info:hover {
+    background-color: #218838;
+}
+
+.text-muted {
+    color: #6c757d !important;
+}
+
+.text-dark {
+    color: #343a40 !important;
+}
+
+.text-danger {
+    color: #dc3545 !important;
+}
+
+a {
+    font-size: 0.9rem;
+    color: #343a40;
+}
+
+a:hover {
+    text-decoration: underline;
+}

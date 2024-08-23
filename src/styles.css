@@ -1,0 +1,25 @@
+/* Ocultamos el nav y footer */
+
+/* Para LOGIN */
+.login-page nav,
+.login-page footer {
+  display: none;
+}
+
+/* Para REGISTER */
+.register-page nav,
+.register-page footer {
+  display: none;
+}
+
+/* Para FORGOT-PASSWORD */
+.forgot-password-page nav,
+.forgot-password-page footer {
+  display: none;
+}
+
+/* Para FORGOT-PASSWORD */
+.verify-email-page nav,
+.verify-email-page footer {
+  display: none;
+}

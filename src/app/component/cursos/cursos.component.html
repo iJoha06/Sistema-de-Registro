@@ -1,0 +1,69 @@
+<div class="container-fluid">
+    <div class="row mt-4">
+        <div class="col-md-12">
+            <h1 class="text-center text-primary">Gestión de Cursos</h1>
+            <p class="text-center text-muted">
+                Bienvenido al módulo de gestión de cursos. Aquí puedes agregar nuevos estudiantes, actualizar información existente y ver una lista completa de todos los estudiantes registrados en el sistema.
+            </p>
+            <hr class="my-4">           
+        </div>
+    </div>
+
+    <div class="row justify-content-center">
+        <div class="col-md-4 mt-5">
+            <div class="card border-0 shadow p-3">
+                <div class="form-floating mb-3 text-center">
+                    <h5 class="text-center text-danger">Agregar Curso</h5>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="Name" name="Name" [(ngModel)]="name">
+                    <label for="name">Nombre</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="Description" name="Description" [(ngModel)]="description">
+                    <label for="description">Descripción</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="Creditos" name="Creditos" [(ngModel)]="creditos">
+                    <label for="creditos">Creditos</label>
+                </div>
+                <button type="button" class="btn btn-outline-success" (click)="addCursos()">Agregar Curso</button><br>
+                <button type="button" class="btn btn-outline-primary" (click)="updateCursos()" *ngIf="cursosObj.id">Actualizar Curso</button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="row mt-5 justify-content-center">
+        <!-- Lista de cursos -->
+        <div class="col-md-8">
+            <h5 class="text-danger text-center">Lista de Cursos</h5>
+            <div class="card p-3 shadow">
+                <div class="card-body">
+                    <table class="table table-hover text-center">
+                        <thead>
+                          <tr>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Descripción</th>
+                            <th scope="col">Creditos</th>
+                            <th scope="col">Acción</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr *ngFor="let Cursos of cursosList">
+                            <td>{{Cursos.name}}</td>
+                            <td>{{Cursos.description}}</td>
+                            <td>{{Cursos.creditos}}</td>
+                            <td>
+                                <button class="btn btn-outline-success" (click)="editCursos(Cursos)">Editar</button>
+                                <button class="btn btn-outline-danger" (click)="deleteCursos(Cursos)">Eliminar</button>             
+                            </td>                        
+                          </tr>
+                        </tbody>
+                      </table>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+  <br><br><br><br><br><br><br><br>
+  

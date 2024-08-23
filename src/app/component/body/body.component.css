@@ -1,0 +1,37 @@
+h4 {
+    font-size: 28px;
+    font-weight: bold;
+    color: #333;
+    background-color: #4CAF50; 
+    padding: 15px;
+    border-radius: 8px;
+    margin: 20px auto; 
+    width: fit-content; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    text-transform: uppercase; 
+  }
+  
+  .container {
+    display: flex;
+  }
+  
+  .card {
+    border-radius: 20px;
+    margin-left: -21px;
+    height: 700px;
+    background-color: #fff;
+    flex: 1;
+    transition: .3s all ease;
+  }
+  
+  .card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+  }
+  
+  .card:hover {
+    flex: 2;
+    background-color: rgb(207, 207, 207);
+  }
+  
